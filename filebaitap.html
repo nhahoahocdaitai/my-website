@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Bài Tập</title>
+    <!-- Liên kết tới Font Awesome để dùng icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMI5h2bQZ5CpIQJ8sBsk0UA8RVv/UplmclOZ+gg" crossorigin="anonymous">
+    <style>
+        /* CSS chung cho trang */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Tiêu đề trang */
+        .header {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Nút Home cố định ở góc trên bên trái */
+        .home-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #ffffff;
+            color: #4CAF50;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid #4CAF50;
+            transition: background-color 0.3s, color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 1000;
+        }
+
+        .home-button:hover {
+            background-color: #4CAF50;
+            color: #ffffff;
+        }
+
+        /* Khung chứa bài tập */
+        .file-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mục bài tập */
+        .file-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .file-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Tên và mô tả file */
+        .file-details {
+            flex-grow: 1;
+        }
+
+        .file-name {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+
+        .file-description {
+            color: #666;
+            margin: 5px 0 0;
+        }
+
+        /* Nút tải xuống */
+        .file-download {
+            text-decoration: none;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .file-download:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Nút Home với icon -->
+    <a href="index.html" class="home-button">
+        <i class="fas fa-home"></i> Home
+    </a>
+
+    <div class="header">
+        <h1>Danh Sách Bài Tập</h1>
+        <p>Các file bài tập cho khóa học</p>
+    </div>
+
+    <div class="file-container">
+        <!-- Mục bài tập 1 -->
+        <div class="file-item">
+            <div class="file-details">
+                <p class="file-name">ÔN TẬP CHƯƠNG I</p>
+                <p class="file-description">CẤU TẠO NGUYÊN TỬ</p>
+            </div>
+            <a href="c:\Users\Admin\Downloads\baitapchuongI.docx" class="file-download" download>Tải xuống</a>
+        </div>
+
+        <!-- Mục bài tập 2 -->
+        <div class="file-item">
+            <div class="file-details">
+                <p class="file-name">Bài Tập Chương II</p>
+                <p class="file-description">BẢNG TUẦN HOÀN CÁC NGUYÊN TỐ HOÁ HỌC.</p>
+            </div>
+            <a href="d:\CHEMISTRY\ÔN CHƯƠNG 2 LỚP 10 hs.docx" class="file-download" download>Tải xuống</a>
+        </div>
+
+        <!-- Mục bài tập 3 -->
+        <div class="file-item">
+            <div class="file-details">
+                <p class="file-name">Bài Tập Vật Lý</p>
+                <p class="file-description">Các bài tập về cơ học và điện từ học.</p>
+            </div>
+            <a href="path/to/baitap-ly.pdf" class="file-download" download>Tải xuống</a>
+        </div>
+
+        <!-- Thêm các file bài tập khác theo cấu trúc tương tự -->
+    </div>
+</body>
+</html>
