@@ -1,88 +1,126 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <style></style>
-    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang 2 - KHOÁ HỌC CỦA NHÀ HOÁ HỌC</title>
+    <title>Trang Khóa Học - KHOÁ HỌC HOÁ HỌC</title>
     <style>
-        /* CSS dành riêng cho page2.html */
-        body {
-            font-family: 'Courier New', monospace;
-            background-color: hsl(0, 0%, 99%);
-            color: rgb(0, 0, 0);
+        /* Reset */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Toàn bộ trang */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: hsl(0, 0%, 98%);
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            color: #333;
         }
 
-        header, main, footer {
-            width: 80%;
+        /* Menu điều hướng góc trái và phải */
+        .nav-left, .nav-right {
+            position: absolute;
+            top: 20px;
+        }
+
+        .nav-left {
+            left: 20px;
+        }
+
+        .nav-right {
+            right: 20px;
+        }
+
+        .nav-left a, .nav-right a {
+            color: #333;
+            font-size: 16px;
+            text-decoration: none;
+            margin: 0 10px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            background-color: #f0f0f0;
+        }
+
+        .nav-left a:hover, .nav-right a:hover {
+            background-color: #ddd;
+        }
+
+        /* Container của khóa học */
+        .course-container {
+            width: 90%;
             max-width: 800px;
+            background-color: #ffffff;
+            padding: 40px;
+            margin-top: 80px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             text-align: center;
-            padding: 20px;
-            background-color: #eeeeee;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(112, 112, 112, 0.15);
-            
         }
 
         h1 {
-            color: #000000;
+            font-size: 2.2em;
+            color: #4CAF50;
+            margin-bottom: 15px;
         }
 
-        footer {
-            font-size: 0.9em;
-            color: #000000;
+        p {
+            font-size: 1em;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 25px;
         }
 
-        a {
-            color: #000000;
-            text-decoration: none;
-            font-weight: bold;
+        /* Các nút phương thức liên hệ */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
-        a:hover {
-            color: #0073ff;
+        .social-icons a {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang 2 - KHOÁ HỌC HOÁ</title>
-</head>
 <body>
-    <header>
+    <!-- Menu trái -->
+    <div class="nav-left">
+        <a href="index.html">Trang chủ</a>
+        <a href="donate.html">Donate</a>
+    </div>
+
+    <!-- Menu phải -->
+    <div class="nav-right">
+        <a href="lienhe.html">Liên hệ</a>
+        <a href="filebaitap.html">Tài Liệu Học Tập</a>
+    </div>
+
+    <div class="course-container">
         <h1>KHOÁ HỌC HOÁ HỌC</h1>
-    </header>
-    <main>
-        <title></title>Nhóm Zalo<title></title>
+        <p>Khóa học này cung cấp những kiến thức cơ bản và nâng cao về hóa học, giúp bạn nắm vững các khái niệm quan trọng và áp dụng vào thực tế.</p>
+
+        <h2>Tham gia Nhóm Zalo</h2>
         <div class="social-icons">
-            <a href="https://zalo.me/g/buzphf783" target="_blank" title="Nhóm zalo">
-                <img src="https://img.icons8.com/?size=100&id=0m71tmRjlxEe&format=png&color=000000s" alt="Zalo Icon" style="width: 75px; height: auto;text-align: center"> 
-    </main>
-    <footer>
-        <p>Các Phương Thức Liên Hệ</p>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/eric.chemistry" target="_blank" title="Facebook"style="width: 75px; height: 25px;text-align:center">
-                <img src="https://img.icons8.com/fluency/48/000000/facebook.png" alt="Facebook Icon">
-                <a href="https://www.instagram.com/ngxzoc.hemist/tagged/?__pwa=1" target="_blank" title="instagram">
-                    <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" alt="instagram Icon" style="width: 55px; height: 50px;text-align: center">
-                <a></a>
-                <div>
-        </main>
-        </footer>
-    <h2> <!-- Nút trở về trang chủ --> <h2>
-    </footer>
-  <main>
-    <a href="index.html">Quay về Trang chủ</a>
-    </footer>
+            <a href="https://zalo.me/g/buzphf783" target="_blank" title="Nhóm Zalo">
+                <img src="https://img.icons8.com/?size=100&id=0m71tmRjlxEe&format=png&color=000000" alt="Zalo Icon">
+            </a>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,137 +1,136 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <style></style>
-    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang 1 - ỦNG HỘ NHÀ HOÁ HỌC ĐẠI TÀI</title>
+    <title>Trang Chủ - Học Hóa Học Online</title>
     <style>
-        /* Các kiểu cho PC hoặc màn hình lớn */
-body {
-    font-family: Arial, sans-serif;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-}
-
-/* Media query cho màn hình nhỏ (dưới 768px) */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-}
-
-/* Media query cho điện thoại rất nhỏ (dưới 480px) */
-@media (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-}
-
-         body {
-            font-family: 'Courier New', monospace;
-            background-color: hsl(0, 0%, 100%);
-            color: rgb(249, 249, 249);
+        /* Reset */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Toàn bộ trang */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5; /* Màu nền nhẹ nhàng */
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            color: #333;
+            min-height: 100vh;
         }
 
-        header, main, footer {
-            width: 80%;
-            max-width: 800px;
-            text-align: center;
-            padding: 20px;
-            background-color: #010101;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(132, 127, 127, 0.15);
+        /* Menu điều hướng góc trái và phải */
+        .nav-left, .nav-right {
+            position: absolute;
+            top: 20px;
         }
 
-        h1 {
-            color: #fdfdfd;
+        .nav-left {
+            left: 20px;
         }
 
-        footer {
-            font-size: 0.9em;
-            color: #ececec;
+        .nav-right {
+            right: 20px;
         }
 
-        a {
-            color: #030101;
+        .nav-left a, .nav-right a {
+            color: #333;
+            font-size: 16px;
             text-decoration: none;
-            font-weight: bold;
+            margin: 0 10px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            background-color: #e0e0e0;
         }
 
+        .nav-left a:hover, .nav-right a:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        /* Phần tiêu đề */
+        .header {
+            text-align: center;
+            padding: 40px;
+            background-color: #4A90E2; /* Màu xanh nhẹ */
+            color: white;
+            width: 100%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+        }
+
+        .header p {
+            font-size: 1.2em;
+        }
+
+        /* Nội dung chính */
+        .content {
+            width: 90%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Giới thiệu ngắn */
+        .intro {
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.6;
+        }
 
     </style>
-</head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Web Đang Phát Triển</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Chào mừng đến với trang web của Nguyễn Bảo Ngọc!</h1>
+    <!-- Menu trái -->
+    <div class="nav-left">
+        <a href="filebaitap.html">File Tài Liệu</a>
+        <a href="page2.htm">Khóa học</a>
+    </div>
+
+    <!-- Menu phải -->
+    <div class="nav-right">
+        <a href="lienhe.html">Liên hệ</a>
+        <a href="donate.html">Donate</a>
+    </div>
+
+    <!-- Tiêu đề trang -->
+    <header class="header">
+        <h1>Học Hóa Học Online</h1>
+        <p>Khám phá kiến thức hóa học một cách dễ dàng và thú vị</p>
     </header>
-    <main>
-        <p> Số tài khoản MB Bank:727102009
-            MOMO:0812538651</p>
-            <div class="social-icons">
-                <a href="https://i.postimg.cc/hj7XyqhH/z6022318947089-93cf5a7e83eb04f84b30c58476a40647.jpg" target="_blank" title="MB BANK">
-                    <img src="https://play-lh.googleusercontent.com/eropcks-sakGkOkCHQzpd87FKK4efHTLY5b93H2FwNLjoPnPcAMSzOHsm3s6lguSgw=w600-h300-pc0xffffff-pd" alt="MB" style="width: 150px; height: auto;">     
-        <a href="https://me.momo.vn/vjI1TotkFXtVCVUNiRsbCd" target="_blank" title="MOMO">
-            <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png" alt="Momo" style="width: 75px; height: auto;">     
-        </a>
-    </div>
-</main>
-    <footer>
-        <p>ỦNG HỘ ĐỂ TÔI PHÁT TRIỂN TRANG WEB</p>
-    </footer>
-    <main>
-    <style>
-        .fixed-top-left {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 0px;
-            background-color: #bababa;
-        }
-    </style>
-    
-    <div class="fixed-top-left">
-        <a href="page2.htm">Lớp Học HOÁ
-    </div>      
-    <style>
-        /* Đảm bảo body có chiều rộng đầy đủ */
-        body {
-            margin: 0;
-            padding: 0;
-            height: 150%;
-        }
 
-        /* Đặt vị trí của liên kết ở góc phải */
-        .link-container {
-            position: absolute;
-            top: 20px; /* Cách trên 20px */
-            right: 20px; /* Cách phải 20px */
-            background-color: #bababa;
-        }
-    </style>
-    
-    <div class="link-container">
-        <a href="filebaitap.html">CÁC FILE BÀI TẬP SƯU TẦM</a>
+    <!-- Nội dung chính -->
+    <div class="content">
+        <!-- Giới thiệu ngắn -->
+        <section class="intro">
+            <h2>Chào mừng bạn đến với Học Hóa Học Online</h2>
+            <p>Trang web cung cấp các tài nguyên học hóa học đầy đủ, từ cơ bản đến nâng cao, giúp bạn nắm vững lý thuyết và kỹ năng thực hành trong lĩnh vực hóa học.</p>
+        </section>
     </div>
-</footer>
-
 </body>
 </html>

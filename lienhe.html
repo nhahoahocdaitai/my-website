@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Bài Tập</title>
+    <title>Liên Hệ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMI5h2bQZ5CpIQJ8sBsk0UA8RVv/UplmclOZ+gg" crossorigin="anonymous">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f9;
         }
 
         /* Tiêu đề */
@@ -46,8 +46,8 @@
             border-radius: 5px;
         }
 
-        /* Khung bài tập */
-        .file-container {
+        /* Phần liên hệ */
+        .contact-container {
             max-width: 900px;
             margin: 30px auto;
             padding: 20px;
@@ -56,39 +56,35 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .file-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .file-item:last-child {
-            border-bottom: none;
-        }
-
-        .file-name {
+        .contact-info {
             font-size: 1.2em;
-            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
             color: #333;
-        }
-
-        .file-description {
-            color: #777;
-        }
-
-        .file-download {
+            font-size: 1.5em;
             text-decoration: none;
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 8px 16px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: color 0.3s;
         }
 
-        .file-download:hover {
-            background-color: #45a049;
+        .social-icons a:hover {
+            color: #4CAF50;
         }
 
         /* Mobile responsiveness */
@@ -98,7 +94,7 @@
                 align-items: center;
             }
 
-            .file-container {
+            .contact-container {
                 width: 95%;
             }
         }
@@ -111,45 +107,29 @@
             <i class="fas fa-home"></i> Trang chủ
         </a>
         <div>
+            <a href="filebaitap.html">Bài Tập</a>
             <a href="page2.htm">Khóa Học</a>
-            <a href="lienhe.html">Liên Hệ</a>
             <a href="donate.html">Donate</a>
         </div>
     </div>
 
-    <!-- Tiêu đề trang bài tập -->
+    <!-- Tiêu đề trang Liên Hệ -->
     <div class="header">
-        <h1>Danh Sách Bài Tập</h1>
-        <p>Các bài tập cho khóa học Hóa học</p>
+        <h1>Liên Hệ Với Chúng Tôi</h1>
     </div>
 
-    <!-- Khung bài tập -->
-    <div class="file-container">
-        <!-- Bài tập 1 -->
-        <div class="file-item">
-            <div>
-                <p class="file-name">ÔN TẬP CHƯƠNG I</p>
-                <p class="file-description">Cấu Tạo Nguyên Tử</p>
-            </div>
-            <a href="files/chuong1.docx" class="file-download" download>Tải xuống</a>
+    <!-- Phần liên hệ -->
+    <div class="contact-container">
+        <div class="contact-info">
+            <p><i class="fas fa-phone-alt"></i><strong>Điện thoại:</strong> 0812538651</p>
+            <p><i class="fas fa-envelope"></i><strong>Email:</strong> nguyenbaongocc271009@hgmail.com</p>
         </div>
-
-        <!-- Bài tập 2 -->
-        <div class="file-item">
-            <div>
-                <p class="file-name">Bài Tập Chương II</p>
-                <p class="file-description">Bảng Tuần Hoàn Các Nguyên Tố Hóa Học</p>
-            </div>
-            <a href="files/chuong2.docx" class="file-download" download>Tải xuống</a>
-        </div>
-
-        <!-- Bài tập 3 -->
-        <div class="file-item">
-            <div>
-                <p class="file-name">Chuyên Đề Chương I</p>
-                <p class="file-description">Cấu Tạo Nguyên Tử</p>
-            </div>
-            <a href="files/chuyen-de1.docx" class="file-download" download>Tải xuống</a>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/eric.chemistry" target="_blank" title="Facebook"style="width: 75px; height: 25px;text-align:center">
+                <img src="https://img.icons8.com/fluency/48/000000/facebook.png" alt="Facebook Icon">
+                <a href="https://www.instagram.com/ngxzoc.hemist/tagged/?__pwa=1" target="_blank" title="instagram">
+                    <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" alt="instagram Icon" style="width: 55px; height: 50px;text-align: center">
+                <a></a>
         </div>
     </div>
 </body>
