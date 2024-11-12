@@ -7,6 +7,31 @@
     <!-- Liên kết tới Font Awesome để dùng icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMI5h2bQZ5CpIQJ8sBsk0UA8RVv/UplmclOZ+gg" crossorigin="anonymous">
     <style>
+        /* Các kiểu cho PC hoặc màn hình lớn */
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+}
+
+/* Media query cho màn hình nhỏ (dưới 768px) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+/* Media query cho điện thoại rất nhỏ (dưới 480px) */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+}
+
         /* CSS chung cho trang */
         body {
             font-family: Arial, sans-serif;
