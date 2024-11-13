@@ -96,10 +96,62 @@
             .navbar {
                 flex-direction: column;
                 align-items: center;
+                text-align: center;
+            }
+
+            .navbar a {
+                padding: 12px;
+                font-size: 1em;
             }
 
             .file-container {
                 width: 95%;
+            }
+
+            .file-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+                margin-bottom: 15px;
+            }
+
+            .file-name {
+                font-size: 1.1em;
+            }
+
+            .file-description {
+                font-size: 0.9em;
+            }
+
+            .file-download {
+                margin-top: 10px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Mobile very small screens */
+        @media (max-width: 480px) {
+            .navbar a {
+                font-size: 0.9em;
+            }
+
+            .header {
+                padding: 20px;
+                font-size: 1.8em;
+            }
+
+            .file-name {
+                font-size: 1em;
+            }
+
+            .file-description {
+                font-size: 0.85em;
+            }
+
+            .file-download {
+                padding: 10px;
+                font-size: 1em;
             }
         }
     </style>

@@ -86,27 +86,27 @@
             display: flex;
             justify-content: space-around;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
 
         .payment-methods a {
-            display: inline-block;
-            font-size: 24px;
-            color: #ffffff;
-            background-color: #3498db;
-            padding: 15px;
-            border-radius: 50%;
-            transition: transform 0.3s ease, background-color 0.3s ease;
+            padding: 0; /* Bỏ padding để không có khoảng cách xung quanh icon */
+            background-color: transparent; /* Bỏ nền xanh */
+            transition: transform 0.3s ease;
             text-decoration: none;
+            margin-bottom: 20px; /* Khoảng cách giữa các icon khi trên di động */
         }
 
-        .payment-methods a:hover {
-            background-color: #2980b9;
+        .payment-methods img {
+            width: 100%; /* Sử dụng width 100% cho ảnh */
+            max-width: 150px; /* Kích thước tối đa cho ảnh */
+            height: auto; /* Giữ tỉ lệ ảnh */
+            border-radius: 10px; /* Thêm bo góc cho ảnh */
+            transition: transform 0.3s ease;
+        }
+
+        .payment-methods img:hover {
             transform: scale(1.15);
-        }
-
-        /* Icon */
-        .payment-methods i {
-            font-size: 30px;
         }
 
         /* Footer */
@@ -114,6 +114,38 @@
             margin-top: 20px;
             font-size: 0.9em;
             color: #999;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav-left, .nav-right {
+                position: static;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            .nav-left a, .nav-right a {
+                display: block;
+                margin: 5px 0;
+            }
+
+            .support-container {
+                width: 85%;
+                padding: 30px;
+            }
+
+            .payment-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .payment-methods a {
+                margin-bottom: 15px;
+            }
+
+            .footer {
+                font-size: 0.8em;
+            }
         }
     </style>
 </head>
@@ -127,7 +159,7 @@
 
     <!-- Menu phải -->
     <div class="nav-right">
-        <a href="#lienhe.html">Liên hệ</a>
+        <a href="lienhe.html">Liên hệ</a>
         <a href="page2.htm">Khoá Học</a>
     </div>
 
@@ -137,9 +169,10 @@
 
         <div class="payment-methods">
             <a href="https://me.momo.vn/vjI1TotkFXtVCVUNiRsbCd" target="_blank" title="MOMO">
-                <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png" alt="Momo" style="width: 50px; height: auto;">     
+                <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png" alt="Momo"style="width: 95px; height: auto;">
+            </a>
             <a href="https://i.postimg.cc/hj7XyqhH/z6022318947089-93cf5a7e83eb04f84b30c58476a40647.jpg" target="_blank" title="MB BANK">
-                <img src="https://play-lh.googleusercontent.com/eropcks-sakGkOkCHQzpd87FKK4efHTLY5b93H2FwNLjoPnPcAMSzOHsm3s6lguSgw=w600-h300-pc0xffffff-pd" alt="MB" style="width: 95px; height: auto;">
+                <img src="https://play-lh.googleusercontent.com/eropcks-sakGkOkCHQzpd87FKK4efHTLY5b93H2FwNLjoPnPcAMSzOHsm3s6lguSgw=w600-h300-pc0xffffff-pd" alt="MB"style="width: 190px; height: 85px;">
             </a>
         </div>
 
