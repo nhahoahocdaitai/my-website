@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn Bộ Câu Hỏi</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 40px;
+            color: #ff8c00;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ff8c00, #e52e71);
+            color: white;
+            border: none;
+            padding: 20px 40px;
+            margin: 15px;
+            font-size: 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #e52e71, #ff8c00);
+        }
+
+        .btn:focus {
+            outline: none;
+        }
+
+        .links {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .links a {
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .links a:hover {
+            color: #ff8c00;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .btn {
+                width: 80%;
+                font-size: 18px;
+                padding: 15px 30px;
+            }
+
+            .links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Chọn Bộ Câu Hỏi</h1>
+    <button class="btn" onclick="window.location.href='quiz.html?quiz=1'">Bộ Câu Hỏi 1</button>
+    <button class="btn" onclick="window.location.href='quiz.html?quiz=2'">Bộ Câu Hỏi 2</button>
+    <button class="btn" onclick="window.location.href='quiz.html?quiz=3'">Bộ Câu Hỏi 3</button>
+
+    <div class="links">
+        <a href="index.html">Trang Chủ</a>
+        <a href="donate.html">Donate</a>
+        <a href="filebaitap.html">File Tài liệu</a>
+        <a href="page2.htm">Khoá Học</a>
+    </div>
+
+</body>
+</html>

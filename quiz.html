@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Hóa Học</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        #quiz-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .question {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        .answers {
+            margin-top: 20px;
+        }
+        .answer {
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        .answer:hover {
+            background-color: #007B8A;
+        }
+        .answer:focus {
+            outline: none;
+        }
+        .correct {
+            background-color: #4CAF50;
+        }
+        .incorrect {
+            background-color: #f44336;
+        }
+        .links {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .links a {
+            color: #4CAF50;
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .links a:hover {
+            color: #007B8A;
+        }
+        @media (max-width: 600px) {
+            .question {
+                font-size: 18px;
+            }
+            .answer {
+                font-size: 16px;
+            }
+            #quiz-container {
+                padding: 15px;
+            }
+            .links a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="quiz-container">
+        <div class="question" id="question"></div>
+        <div class="answers" id="answers"></div>
+    </div>
+
+    <div class="links">
+        <a href="index.html">Thoát về trang chủ</a>
+    </div>
+
+    <script>
+        const quizData = {
+            1: [
+                { question: "Hóa trị của oxi là bao nhiêu?", answers: ["1", "2", "3", "4"], correctAnswer: 1 },
+                { question: "H2O là công thức của chất gì?", answers: ["Cồn", "Nước", "Acid sulfuric", "Amoniac"], correctAnswer: 1 }
+            ],
+            2: [
+                { question: "Công thức của CO2 là gì?", answers: ["CO2", "H2O", "C2H4", "O2"], correctAnswer: 0 },
+                { question: "HCl là chất gì?", answers: ["Axit clohidric", "Nước", "Cồn", "Acid sulfuric"], correctAnswer: 0 }
+            ],
+            3: [
+                { question: "Khi nào phản ứng oxi hóa xảy ra?", answers: ["Khi có oxi", "Khi có nước", "Khi có nhiệt", "Khi có ánh sáng"], correctAnswer: 0 },
+                { question: "NaCl là gì?", answers: ["Muối ăn", "Nước", "Amoniac", "Sodium"], correctAnswer: 0 }
+            ]
+        };
+
+        let currentQuestion = 0;
+        let currentQuiz = new URLSearchParams(window.location.search).get('quiz') || 1;
+        currentQuiz = parseInt(currentQuiz);
+
+        const questions = quizData[currentQuiz];
+
+        function showQuestion() {
+            const questionData = questions[currentQuestion];
+            document.getElementById('question').innerText = questionData.question;
+            const answersContainer = document.getElementById('answers');
+            answersContainer.innerHTML = '';
+            questionData.answers.forEach((answer, index) => {
+                const button = document.createElement('button');
+                button.innerText = answer;
+                button.classList.add('answer');
+                button.onclick = () => checkAnswer(index, button);
+                answersContainer.appendChild(button);
+            });
+        }
+
+        function checkAnswer(selectedIndex, button) {
+            const correctAnswer = questions[currentQuestion].correctAnswer;
+            if (selectedIndex === correctAnswer) {
+                button.classList.add('correct');
+                setTimeout(() => nextQuestion(), 1000);
+            } else {
+                button.classList.add('incorrect');
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                showQuestion();
+            } else {
+                document.getElementById('quiz-container').innerHTML = "<div class='result'>Bạn đã hoàn thành quiz!</div>";
+            }
+        }
+
+        showQuestion();
+    </script>
+
+</body>
+</html>
