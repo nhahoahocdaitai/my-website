@@ -16,104 +16,125 @@
         /* Toàn bộ trang */
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #3498db, #2ecc71);
+            background: #f0f4f8;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            color: #ffffff;
+            color: #333;
             margin: 0;
+            overflow: hidden;
         }
 
         /* Menu góc trái và phải */
         .nav-left, .nav-right {
             position: absolute;
-            top: 20px;
+            top: 30px;
+            transition: transform 0.3s ease;
         }
 
         .nav-left {
-            left: 20px;
+            left: 30px;
         }
 
         .nav-right {
-            right: 20px;
+            right: 30px;
         }
 
         .nav-left a, .nav-right a {
-            color: #ffffff;
+            color: #fff;
             font-size: 16px;
             text-decoration: none;
             margin: 0 10px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            padding: 8px 20px;
+            border-radius: 30px;
+            background-color: #3498db;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .nav-left a:hover, .nav-right a:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: #2980b9;
+            transform: translateY(-5px);
         }
 
         /* Container của nội dung ủng hộ */
         .support-container {
-            background: rgba(255, 255, 255, 0.95);
+            background: #ffffff;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             width: 90%;
             max-width: 500px;
             text-align: center;
-            color: #333;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Tiêu đề */
         .support-container h1 {
-            font-size: 2.2em;
-            font-weight: bold;
+            font-size: 2.5em;
+            font-weight: 600;
             color: #2ecc71;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .support-container h1:hover {
+            transform: scale(1.05);
         }
 
         /* Nội dung */
         .support-container p {
-            font-size: 1.1em;
-            line-height: 1.6;
+            font-size: 1.2em;
+            line-height: 1.8;
             color: #555;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         /* Các nút thanh toán */
         .payment-methods {
             display: flex;
             justify-content: space-around;
-            margin-top: 30px;
+            margin-top: 20px;
             flex-wrap: wrap;
+            gap: 15px;
         }
 
         .payment-methods a {
-            padding: 0; /* Bỏ padding để không có khoảng cách xung quanh icon */
-            background-color: transparent; /* Bỏ nền xanh */
-            transition: transform 0.3s ease;
+            padding: 0;
+            background-color: transparent;
+            transition: transform 0.3s ease, opacity 0.3s ease;
             text-decoration: none;
-            margin-bottom: 20px; /* Khoảng cách giữa các icon khi trên di động */
         }
 
         .payment-methods img {
-            width: 100%; /* Sử dụng width 100% cho ảnh */
-            max-width: 150px; /* Kích thước tối đa cho ảnh */
-            height: auto; /* Giữ tỉ lệ ảnh */
-            border-radius: 10px; /* Thêm bo góc cho ảnh */
-            transition: transform 0.3s ease;
+            width: 120px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .payment-methods img:hover {
-            transform: scale(1.15);
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
 
         /* Footer */
         .footer {
-            margin-top: 20px;
+            margin-top: 30px;
             font-size: 0.9em;
-            color: #999;
+            color: #777;
         }
 
         /* Mobile responsiveness */
@@ -137,10 +158,6 @@
             .payment-methods {
                 flex-direction: column;
                 align-items: center;
-            }
-
-            .payment-methods a {
-                margin-bottom: 15px;
             }
 
             .footer {
@@ -169,10 +186,10 @@
 
         <div class="payment-methods">
             <a href="https://me.momo.vn/vjI1TotkFXtVCVUNiRsbCd" target="_blank" title="MOMO">
-                <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png" alt="Momo"style="width: 95px; height: auto;">
+                <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo-Square.png" alt="Momo">
             </a>
             <a href="https://i.postimg.cc/hj7XyqhH/z6022318947089-93cf5a7e83eb04f84b30c58476a40647.jpg" target="_blank" title="MB BANK">
-                <img src="https://play-lh.googleusercontent.com/eropcks-sakGkOkCHQzpd87FKK4efHTLY5b93H2FwNLjoPnPcAMSzOHsm3s6lguSgw=w600-h300-pc0xffffff-pd" alt="MB"style="width: 190px; height: 85px;">
+                <img src="https://i.pinimg.com/474x/ca/37/a6/ca37a6edf9de211c99ecd300289b0973.jpg" alt="MB">
             </a>
         </div>
 

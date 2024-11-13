@@ -15,18 +15,20 @@
         /* Toàn bộ trang */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f5f5f5; /* Màu nền nhẹ nhàng */
+            background-color: #0a0f24; /* Màu nền đen xanh */
+            color: #f0f0f0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: #333;
             min-height: 100vh;
+            transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển đổi màu nền */
         }
 
         /* Menu điều hướng góc trái và phải */
         .nav-left, .nav-right {
             position: absolute;
             top: 20px;
+            transition: transform 0.3s ease-in-out;
         }
 
         .nav-left {
@@ -38,38 +40,41 @@
         }
 
         .nav-left a, .nav-right a {
-            color: #333;
+            color: #66ffcc;
             font-size: 16px;
             text-decoration: none;
             margin: 0 10px;
             padding: 8px 12px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
-            background-color: #e0e0e0;
+            background-color: #1b2735;
+            transition: all 0.3s ease;
         }
 
         .nav-left a:hover, .nav-right a:hover {
-            background-color: #007BFF;
-            color: white;
+            background-color: #66ffcc;
+            color: #0a0f24;
+            transform: scale(1.1); /* Tạo hiệu ứng phóng to */
         }
 
         /* Phần tiêu đề */
         .header {
             text-align: center;
             padding: 40px;
-            background-color: #4A90E2; /* Màu xanh nhẹ */
-            color: white;
+            background: linear-gradient(145deg, #1e2a47, #0a0f24);
+            color: #66ffcc;
             width: 100%;
             margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            animation: glow 1.5s infinite alternate;
         }
 
         .header h1 {
-            font-size: 2.5em;
+            font-size: 2.8em;
+            text-shadow: 0 0 12px #66ffcc, 0 0 25px #66ffcc, 0 0 30px #00ffcc;
         }
 
         .header p {
-            font-size: 1.2em;
+            font-size: 1.3em;
         }
 
         /* Nội dung chính */
@@ -80,39 +85,72 @@
             flex-direction: column;
             gap: 20px;
             padding: 20px;
+            animation: slideUp 0.8s ease-out;
         }
 
         /* Giới thiệu ngắn */
         .intro {
             text-align: center;
             padding: 40px;
-            background-color: white;
+            background-color: #1b2735;
             border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            animation: float 3s ease-in-out infinite;
         }
 
         .intro h2 {
-            color: #333;
+            color: #66ffcc;
             font-size: 2em;
             margin-bottom: 15px;
+            transform: scale(1.1); /* Thêm hiệu ứng phóng to */
         }
 
         .intro p {
             font-size: 1.1em;
-            color: #555;
+            color: #cce7e8;
             line-height: 1.6;
+        }
+
+        /* Hiệu ứng phát sáng cho tiêu đề */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 8px #66ffcc, 0 0 15px #66ffcc, 0 0 20px #00ffcc;
+            }
+            100% {
+                text-shadow: 0 0 12px #66ffcc, 0 0 25px #66ffcc, 0 0 30px #00ffcc;
+            }
+        }
+
+        /* Hiệu ứng nổi lên nhẹ */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Hiệu ứng di chuyển lên */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Thiết kế đáp ứng cho màn hình nhỏ */
         @media (max-width: 768px) {
-            /* Căn giữa menu trên màn hình nhỏ */
             .nav-left, .nav-right {
                 position: static;
                 text-align: center;
                 margin: 10px 0;
             }
 
-            /* Chỉnh khoảng cách tiêu đề và kích thước font chữ */
             .header {
                 padding: 20px;
             }
@@ -125,13 +163,11 @@
                 font-size: 1em;
             }
 
-            /* Điều chỉnh nội dung chính để vừa màn hình nhỏ hơn */
             .content {
                 width: 100%;
                 padding: 10px;
             }
 
-            /* Giới thiệu ngắn gọn hơn trên di động */
             .intro {
                 padding: 20px;
             }
