@@ -103,6 +103,39 @@
             line-height: 1.6;
         }
 
+        /* Thiết kế đáp ứng cho màn hình nhỏ */
+        @media (max-width: 768px) {
+            /* Căn giữa menu trên màn hình nhỏ */
+            .nav-left, .nav-right {
+                position: static;
+                text-align: center;
+                margin: 10px 0;
+            }
+
+            /* Chỉnh khoảng cách tiêu đề và kích thước font chữ */
+            .header {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            /* Điều chỉnh nội dung chính để vừa màn hình nhỏ hơn */
+            .content {
+                width: 100%;
+                padding: 10px;
+            }
+
+            /* Giới thiệu ngắn gọn hơn trên di động */
+            .intro {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
