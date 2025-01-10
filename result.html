@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết quả bài thi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .result-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+        .result-title {
+            font-weight: bold;
+            color: #1f2937;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .score {
+            font-size: 24px;
+            color: #10b981;
+            margin-bottom: 20px;
+        }
+        .answers-list {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .answer-item {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .correct {
+            color: #4CAF50;
+        }
+        .incorrect {
+            color: #f44336;
+        }
+        .home-button {
+            background-color: #1f2937;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .home-button:hover {
+            background-color: #374151;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="result-container">
+        <div class="result-title">Kết quả bài thi</div>
+        <div class="score">Điểm của bạn: <span id="score"></span></div>
+        <div class="answers-list" id="answers-list"></div>
+        <button onclick="goHome()" class="home-button">Về trang chủ</button>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                score: urlParams.get('score'),
+                answersStatus: JSON.parse(decodeURIComponent(urlParams.get('answersStatus')))
+            };
+        }
+
+        function displayResults() {
+            const params = getQueryParams();
+            const score = params.score;
+            const answersStatus = params.answersStatus;
+            const answersList = document.getElementById("answers-list");
+
+            document.getElementById("score").innerText = score;
+
+            // Giả sử mảng câu hỏi được cung cấp giống như trong quiz
+            const questions = [
+                // Những câu hỏi sẽ cần phải điền lại
+                { question: "Hóa trị của oxi là bao nhiêu?", correctAnswer: 1 },
+                { question: "H2O là công thức của chất gì?", correctAnswer: 1 },
+                { question: "CO2 là công thức của chất nào?", correctAnswer: 2 },
+                // ... các câu hỏi khác
+            ];
+
+            questions.forEach((question, index) => {
+                const answerItem = document.createElement("div");
+                answerItem.classList.add("answer-item");
+                answerItem.innerHTML = `
+                    <div>${question.question}</div>
+                    <div class="${answersStatus[index] ? 'correct' : 'incorrect'}">
+                        ${answersStatus[index] ? 'Đúng' : 'Sai'}
+                    </div>
+                `;
+                answersList.appendChild(answerItem);
+            });
+        }
+
+        function goHome() {
+            window.location.href = 'index.html';  // Thay thế bằng trang chính của bạn
+        }
+
+        displayResults();
+    </script>
+
+</body>
+</html>
