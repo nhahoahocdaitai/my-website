@@ -1,0 +1,46 @@
+/* Reset một số kiểu dáng mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Kiểu cho toàn bộ trang */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Kiểu cho thanh điều hướng */
+nav {
+    background-color: #333; /* Màu nền tối cho thanh điều hướng */
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Kiểu cho các liên kết trong thanh điều hướng */
+nav a {
+    color: white; /* Màu chữ trắng */
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    display: inline-block;
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền */
+}
+
+/* Hiệu ứng khi di chuột vào các liên kết */
+nav a:hover {
+    background-color: #555; /* Màu nền thay đổi khi hover */
+}
+
+/* Kiểu cho thanh điều hướng khi nhìn trên màn hình nhỏ (Mobile) */
+@media (max-width: 768px) {
+    nav {
+        text-align: left;
+    }
+
+    nav a {
+        padding: 15px;
+        display: block;
+    }
+}

@@ -1,0 +1,168 @@
+/* Reset kiểu dáng mặc định cho tất cả phần tử */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Kiểu cho toàn bộ trang */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+/* Kiểu cho header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #4CAF50; /* Màu nền xanh */
+    padding: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 36px;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Kiểu cho phần chính của trang (main) */
+main {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hiệu ứng khi hover vào phần main */
+main:hover {
+    transform: scale(1.02); 
+}
+
+/* Kiểu cho các nút */
+button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Màu xanh đậm khi hover */
+}
+
+/* Kiểu cho các liên kết */
+a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #388e3c;
+}
+
+/* Kiểu cho footer */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px 0;
+    font-size: 16px;
+}
+
+/* Kiểu cho các kết quả trả về */
+#result {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+#result.success {
+    color: #28a745;
+}
+
+#result.fail {
+    color: #dc3545;
+}
+
+/* Kiểu cho kết quả của từng câu hỏi */
+#questionsResults {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.question-result {
+    margin-bottom: 15px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.question-result.correct {
+    color: #28a745;
+    background-color: #e8f9e8;
+}
+
+.question-result.incorrect {
+    color: #dc3545;
+    background-color: #f8d7da;
+}
+
+/* Tối ưu cho thiết bị di động */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    main {
+        padding: 20px;
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}

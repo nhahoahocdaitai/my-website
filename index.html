@@ -3,306 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chủ - Hóa Học</title>
+    <meta name="description" content="Khám phá các bài học, bài tập, bảng tuần hoàn và thí nghiệm hóa học thú vị cùng Hóa Học Kỳ Thú.">
+    <meta name="author" content="Cody">
+    <meta name="keywords" content="hóa học, bài tập, thí nghiệm, bảng tuần hoàn, phản ứng hóa học, ứng dụng hóa học">
+    <title>Hóa Học Kỳ Thú</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #fafafa;
-            color: #333;
-            line-height: 1.6;
-            transition: background-color 0.5s ease-in-out;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
         }
 
-        .container {
-            width: 100%;
+        /* Header */
+        header {
+            background-color: #34495e;
             padding: 20px;
-            text-align: center;
-            max-width: 1200px;
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 0 15px; /* Thêm margin vào bên trái và phải */
         }
-
-        /* Menu button animation */
-        .menu-icon {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            z-index: 100;
-        }
-
-        .menu-icon div {
-            width: 35px;
-            height: 5px;
-            background-color: #4CAF50; /* màu xanh lá đậm */
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 220px; /* Thay 250px thành 220px */
-            height: 100%;
-            background-color: #1c1c1c; /* Đen than */
-            color: #ffffff;
-            padding-top: 60px;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            z-index: 99;
-        }
-
-        .menu a {
-            display: block;
-            color: #ffffff;
-            padding: 20px; /* Tăng padding lên một chút */
-            text-decoration: none;
-            font-size: 1.2em;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-
-        .menu a:hover {
-            background-color: #4CAF50; /* Màu xanh lá khi hover */
-            color: #1c1c1c; /* Màu đen than khi hover */
-        }
-
-        .menu.open {
-            transform: translateX(0);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #1E90FF, #4CAF50); /* Xanh dương và xanh lá */
+        header h1 {
+            font-size: 2.5rem;
             color: white;
-            padding: 80px 20px;
-            border-radius: 12px;
-            margin-top: 80px;
-            width: 80%;
-            max-width: 900px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            animation: colorCycle 5s infinite alternate; /* Chuyển đổi màu sắc luân phiên */
-            transition: background 0.3s ease-in-out; /* Giảm tốc độ chuyển màu */
+            text-align: center;
         }
 
-        .hero:hover {
-            background: linear-gradient(135deg, #1E90FF, #4CAF50);
-            transition: background 0.3s ease-in-out; /* Giảm tốc độ chuyển màu */
+        nav a {
+            color: #ecf0f1;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        nav a:hover {
+            color: #f39c12;
+            transition: color 0.3s ease-in-out;
         }
 
+        /* Hero Section */
+        .hero {
+            background-image: url('https://www.chemistryworld.com/culture/images/atoms_chemical_reaction_shutterstock_960x540.jpg');
+            background-size: cover;
+            background-position: center;
+            color: rgb(12, 11, 11);
+            text-align: center;
+            padding: 100px 20px;
+            border-bottom: 5px solid #f39c12;
+        }
         .hero h1 {
-            font-size: 3.5em;
-            font-weight: bold;
-            margin-bottom: 15px;
-            animation: bounce 2s ease-in-out infinite;
+            font-size: 3.5rem;
+            font-weight: 700;
         }
-
         .hero p {
-            font-size: 1.2em;
-            margin-bottom: 25px;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+        .hero .btn {
+            background-color: #f39c12;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            margin-top: 20px;
+            transition: transform 0.3s ease-in-out;
         }
 
-        .card-container {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            gap: 20px; /* Giảm khoảng cách giữa các card */
-            margin-top: 30px;
+        .hero .btn:hover {
+            transform: scale(1.1);
         }
 
-        .card {
-            background-color: #ffffff;
+        /* Section */
+        section {
+            padding: 50px 20px;
+        }
+
+        .articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .article {
+            border: none;
             border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .article:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .article h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .article p {
+            color: #7f8c8d;
+        }
+
+        .article a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        .article a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #34495e;
+            color: rgb(125, 166, 177);
+            text-align: center;
             padding: 20px;
-            width: 250px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease-in-out;
-            animation: fadeInUp 1s ease-in-out;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            background-color: #4CAF50; /* Màu xanh lá khi hover */
+        footer a {
+            color: #f39c12;
+            text-decoration: none;
         }
 
-        .card img {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 20px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .card h3 {
-            font-size: 1.5em;
-            color: #2f4f4f;
-            margin-bottom: 10px;
-        }
-
-        .card p {
-            font-size: 1em;
-            color: #7f8c8d;
-        }
-
-        .info-section {
-            padding: 60px 20px;
-            text-align: center;
-            margin-top: 50px;
-            animation: fadeInUp 1s ease-in-out;
-        }
-
-        .info-section h2 {
-            font-size: 2.8em;
-            color: #2f4f4f;
-            margin-bottom: 20px;
-        }
-
-        .info-section p {
-            font-size: 1.1em;
-            color: #7f8c8d;
-            line-height: 1.8;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        @keyframes colorCycle {
-            0% {
-                background: linear-gradient(135deg, #1E90FF, #3aa7d6); /* Xanh dương - xanh lá */
-            }
-            50% {
-                background: linear-gradient(135deg, #00BFFF, #070807); /* Xanh sáng - xanh lá nhạt */
-            }
-            100% {
-                background: linear-gradient(135deg, #4682B4, #72d3d0); /* Xanh dương đậm - xanh rừng */
-            }
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(20px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5em;
-            }
-
-            .card-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .card {
-                width: 80%;
-                margin-bottom: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2.2em;
-            }
-
-            .menu a {
-                font-size: 1.1em;
-            }
-
-            .card-container {
-                flex-direction: column;
-                gap: 20px;
-                align-items: center;
-            }
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Hóa Học Kỳ Thú</h1>
+        <nav>
+            <a href="exercisepage.html">Tài liệu</a>
+            <a href="choose.html">Kiểm Tra</a>
+            <a href="periodic-table.html">Bảng Tuần Hoàn</a>
+            <a href="experiment.html">Trang Thí Nghiệm</a>
+            <a href="contact.html">Liên Hệ</a>
+        </nav>
+    </header>
 
-    <div class="menu-icon" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
+    <div class="hero">
+        <h1>Khám Phá Thế Giới Hóa Học</h1>
+        <p>Cùng học tập và khám phá những phản ứng hóa học thú vị!</p>
+        <a href="experiment.html" class="btn">Bắt Đầu Thí Nghiệm</a>
     </div>
-
-    <div id="menu" class="menu">
-        <a href="index.html">Trang chủ</a>
-        <a href="page2.htm">Khóa học</a>
-        <a href="filebaitap.html">Tài liệu</a>
-        <a href="quiz.html">Quiz</a>
-        <a href="donate.html">Donate</a>
-        <a href="lienhe.html">Liên hệ</a>
-    </div>
-
-    <div class="container">
-        <div class="hero">
-            <h1>Chào Mừng Đến Với Thế Giới Hóa Học</h1>
-            <p>Tìm hiểu về các nguyên lý cơ bản và các ứng dụng trong đời sống qua hóa học.</p>
-            <p><a style="color: #fff; text-decoration: underline; font-weight: bold;">Khám phá các khóa học ngay!</a></p>
-        </div>
-
-        <div class="info-section">
-            <h2>Giới Thiệu Về Hóa Học</h2>
-            <p>Hóa học là môn khoa học nghiên cứu về cấu trúc, tính chất, thành phần và các phản ứng của vật chất. Việc hiểu rõ về hóa học không chỉ giúp ta giải thích những hiện tượng tự nhiên mà còn giúp ứng dụng vào nhiều lĩnh vực như y tế, công nghệ, năng lượng...</p>
-        </div>
-
-        <div class="info-section">
-            <h2>Nhà Hóa Học Nổi Bật</h2>
-            <div class="card-container">
-                <div class="card">
-                    <img src="https://cdns.iconmonstr.com/wp-content/releases/preview/2017/240/iconmonstr-flask-21.png" alt="Mèo Cute">
-                    <h3>Marie Curie</h3>
-                    <p>Marie Curie là nhà khoa học nổi tiếng với công trình nghiên cứu về phóng xạ. Bà là người duy nhất giành giải Nobel ở hai lĩnh vực khác nhau.</p>
-                </div>
-                <div class="card">
-                    <img src="https://cdns.iconmonstr.com/wp-content/releases/preview/2017/240/iconmonstr-flask-21.png" alt="Mèo Cute">
-                    <h3>Dmitri Mendeleev</h3>
-                    <p>Người sáng lập bảng tuần hoàn các nguyên tố hóa học, Mendeleev đã phát hiện ra mối quan hệ giữa các nguyên tố trong tự nhiên.</p>
-                </div>
-                <div class="card">
-                    <img src="https://cdns.iconmonstr.com/wp-content/releases/preview/2017/240/iconmonstr-flask-21.png" alt="Mèo Cute">
-                    <h3>Linus Pauling</h3>
-                    <p>Linus Pauling là nhà hóa học xuất sắc, nghiên cứu về các liên kết hóa học và tác động của vitamin đối với sức khỏe con người.</p>
-                </div>
+    <section>
+        <h2 class="text-center">Thông Tin Về Hóa</h2>
+        <div class="articles">
+            <div class="article">
+                <h3>Các Nguyên Tố Hiếm Trong Vũ Trụ</h3>
+                <p>Khám phá về các nguyên tố hiếm và ứng dụng của chúng trong công nghệ hiện đại.</p>
+                <a href="https://example.com/nguyen-to-hiem" target="_blank">Đọc thêm</a>
+            </div>
+            <div class="article">
+                <h3>Phản Ứng Hóa Học Trong Đời Sống</h3>
+                <p>Tìm hiểu về các phản ứng hóa học xảy ra xung quanh chúng ta mỗi ngày.</p>
+                <a href="https://example.com/phan-ung-doi-song" target="_blank">Đọc thêm</a>
+            </div>
+            <div class="article">
+                <h3>Ứng Dụng Của Hóa Học Trong Y Học</h3>
+                <p>Các bước tiến mới trong việc sử dụng hóa học để phát triển dược phẩm.</p>
+                <a href="https://example.com/hoa-hoc-y-hoc" target="_blank">Đọc thêm</a>
             </div>
         </div>
-    </div>
+    </section>
 
+    <footer>
+        <p>&copy; 2025 Hóa Học Kỳ Thú. Thiết kế bởi Cody 🧑‍💻</p>
+    </footer>
+
+    <!-- Thêm hiệu ứng cuộn mượt cho các liên kết -->
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById("menu");
-            menu.classList.toggle("open");
-        }
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 
+    <!-- Thêm Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
